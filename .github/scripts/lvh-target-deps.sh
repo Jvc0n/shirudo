@@ -82,7 +82,6 @@ PKG_CONFIG_PATH="$openssl/lib/pkgconfig" \
 	--libdir="$tss/lib" \
 	--enable-static \
 	--disable-shared \
-	--enable-nodl \
 	--disable-fapi \
 	--disable-policy \
 	--disable-tcti-cmd \
