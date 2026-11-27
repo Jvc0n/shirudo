@@ -120,6 +120,8 @@ jobs:
             cp shirudo-*.deb /tmp/shirudo-packages/
 
             sh .github/scripts/check-static-target.sh shirudo-target
+            apt-get install -y --no-install-recommends strace
+            sh .github/scripts/check-target-tcti.sh ./shirudo-target
 
             cp /tmp/shirudo-packages/* .
 

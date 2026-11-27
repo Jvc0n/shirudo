@@ -538,6 +538,12 @@ the commit at ``HEAD`` alone without them.
        container.
    * - ``check-static-target.sh <binary>``
      - That a target binary is a static PIE.
+   * - ``check-target-tcti.sh <binary>``
+     - That a target binary opens ``/dev/tpmrm0`` and loads no
+       ``libtss2-tcti`` library, which one whose TPM2-TSS was built
+       without ``--enable-nodl`` does. It runs ``<binary> attest`` under
+       ``strace`` as root, on a host where shirudo is not active, and
+       needs no TPM. CI runs it on the target the deb job builds.
    * - ``check-operator-linkage.sh <binary>...``
      - That each operator binary links no shared library but ``libc``,
        ``libcrypto``, ``libssl``, ``libcurl``, ``libtss2-esys``,

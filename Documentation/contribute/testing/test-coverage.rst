@@ -114,6 +114,11 @@ signed config image.
        failure that finishes after it changing nothing, cancelled and
        skipped runs passed over, and the issue of another workflow left
        alone
+   * - ``t0012-check-target-tcti``
+     - ``check-target-tcti.sh``: a target that opens ``/dev/tpmrm0``,
+       one that tries a TCTI library, never opens the device or leaves
+       no trace, the command and the TCTI it traces, and the usage
+       error, against a stub ``strace``
 
 ``build`` (1)
 ~~~~~~~~~~~~~
@@ -1308,7 +1313,7 @@ Coverage by area
      - ``t0005``, ``t0007``, ``t1003``, ``t1004``, ``t1005``,
        ``t7004``, ``t8003``
    * - CI scripts
-     - ``t0001`` to ``t0008``
+     - ``t0001`` to ``t0012``
    * - Parsers
      - ``t3001``, ``t3011``, ``t5002``, ``t5006``, ``t5008``. Unit:
        ``hex``, ``json``, ``string``. Every fuzz target
